@@ -12,7 +12,10 @@ macx {
 }
 DLLDESTDIR = ../..
 
-win32 {
+win32:contains(SYSTEM_ZLIB, yes) {
+    LIBS += -lz
+    DEFINES += SYSTEM_ZLIB
+} else:win32 {
     lessThan(QT_MAJOR_VERSION, 5) {
         INCLUDEPATH += ../zlib
     }
