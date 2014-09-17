@@ -24,7 +24,7 @@ SetCompressor /FINAL /SOLID lzma
 InstallDir "$PROGRAMFILES\${P}"               ; Default installation directory
 Name "${P}"                                   ; Name displayed on installer
 OutFile "${P_NORM}-${V}-win${ARCH}-setup.exe" ; Resulting installer filename
-BrandingText /TRIMLEFT "${P_NORM}-${V}"
+BrandingText "${P_NORM}-${V}"
 RequestExecutionLevel admin
 
 ; ----------- Icon and Bitmap ---------
