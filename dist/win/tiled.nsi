@@ -45,16 +45,16 @@ RequestExecutionLevel admin
 
 ;-------------- Install Pages -------------
 !insertmacro MUI_PAGE_WELCOME
-!insertmacro MUI_PAGE_LICENSE ${ROOT_DIR}\dist\win\gpl-2.0.rtf
+!insertmacro MUI_PAGE_LICENSE ${ROOT_DIR}/dist/win/gpl-2.0.rtf
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
     ; These indented statements modify settings for MUI_PAGE_FINISH
     !define MUI_FINISHPAGE_NOAUTOCLOSE
-    !define MUI_FINISHPAGE_RUN "$INSTDIR\${P_NORM}.exe"
+    !define MUI_FINISHPAGE_RUN "$INSTDIR/${P_NORM}.exe"
     !define MUI_FINISHPAGE_RUN_CHECKED
     !define MUI_FINISHPAGE_RUN_TEXT "Launch ${P}"
     !define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
-    !define MUI_FINISHPAGE_SHOWREADME "$INSTDIR\README.txt"
+    !define MUI_FINISHPAGE_SHOWREADME "$INSTDIR/README.txt"
 !insertmacro MUI_PAGE_FINISH
 
 ;-------------- Uninstall Pages -------------
@@ -165,129 +165,129 @@ Section "" ; No components page, name is not important
 Call checkAlreadyInstalled
 
 SetOutPath $INSTDIR ; Set output path to the installation directory.
-WriteUninstaller $INSTDIR\uninstall.exe ; Location of the uninstaller
+WriteUninstaller $INSTDIR/uninstall.exe ; Location of the uninstaller
 
-File /oname=COPYING.txt ${ROOT_DIR}\COPYING 
-File /oname=AUTHORS.txt ${ROOT_DIR}\AUTHORS
-File /oname=README.txt ${ROOT_DIR}\README.md
-File /oname=NEWS.txt ${ROOT_DIR}\NEWS
-File /oname=LICENSE.APACHE.txt ${ROOT_DIR}\LICENSE.APACHE
-File /oname=LICENSE.BSD.txt ${ROOT_DIR}\LICENSE.BSD
-File /oname=LICENSE.GPL.txt ${ROOT_DIR}\LICENSE.GPL
-File ${BUILD_DIR}\${P_NORM}.dll
-File ${BUILD_DIR}\${P_NORM}.exe
-File ${BUILD_DIR}\tmxviewer.exe
-File ${BUILD_DIR}\tmxrasterizer.exe
-File ${BUILD_DIR}\automappingconverter.exe
-File ${QT_DIR}\bin\Qt5Core.dll
-File ${QT_DIR}\bin\Qt5Gui.dll
-File ${QT_DIR}\bin\Qt5Widgets.dll
-File ${QT_DIR}\bin\Qt5OpenGL.dll
-File ${QT_DIR}\bin\libEGL.dll
-File ${QT_DIR}\bin\libGLESv2.dll
-File ${QT_DIR}\bin\icuin51.dll
-File ${QT_DIR}\bin\icuuc51.dll
-File ${QT_DIR}\bin\icudt51.dll
-File ${SYSTEM_DIR}\MSVCP100.DLL
-File ${SYSTEM_DIR}\MSVCR100.DLL
-File ${ROOT_DIR}\src\tiled\images\tiled-icon.ico
-File ${ROOT_DIR}\dist\win\qt.conf
+File /oname=COPYING.txt ${ROOT_DIR}/COPYING 
+File /oname=AUTHORS.txt ${ROOT_DIR}/AUTHORS
+File /oname=README.txt ${ROOT_DIR}/README.md
+File /oname=NEWS.txt ${ROOT_DIR}/NEWS
+File /oname=LICENSE.APACHE.txt ${ROOT_DIR}/LICENSE.APACHE
+File /oname=LICENSE.BSD.txt ${ROOT_DIR}/LICENSE.BSD
+File /oname=LICENSE.GPL.txt ${ROOT_DIR}/LICENSE.GPL
+File ${BUILD_DIR}/${P_NORM}.dll
+File ${BUILD_DIR}/${P_NORM}.exe
+File ${BUILD_DIR}/tmxviewer.exe
+File ${BUILD_DIR}/tmxrasterizer.exe
+File ${BUILD_DIR}/automappingconverter.exe
+File ${QT_DIR}/bin/Qt5Core.dll
+File ${QT_DIR}/bin/Qt5Gui.dll
+File ${QT_DIR}/bin/Qt5Widgets.dll
+File ${QT_DIR}/bin/Qt5OpenGL.dll
+File ${QT_DIR}/bin/libEGL.dll
+File ${QT_DIR}/bin/libGLESv2.dll
+File ${QT_DIR}/bin/icuin51.dll
+File ${QT_DIR}/bin/icuuc51.dll
+File ${QT_DIR}/bin/icudt51.dll
+File ${SYSTEM_DIR}/MSVCP100.DLL
+File ${SYSTEM_DIR}/MSVCR100.DLL
+File ${ROOT_DIR}/src/tiled/images/tiled-icon.ico
+File ${ROOT_DIR}/dist/win/qt.conf
 
-SetOutPath $INSTDIR\plugins\platforms
-File ${QT_DIR}\plugins\platforms\qwindows.dll
+SetOutPath $INSTDIR/plugins/platforms
+File ${QT_DIR}/plugins/platforms/qwindows.dll
 
-SetOutPath $INSTDIR\plugins\imageformats
-File ${QT_DIR}\plugins\imageformats\qgif.dll
-File ${QT_DIR}\plugins\imageformats\qjpeg.dll
-File ${QT_DIR}\plugins\imageformats\qtiff.dll
+SetOutPath $INSTDIR/plugins/imageformats
+File ${QT_DIR}/plugins/imageformats/qgif.dll
+File ${QT_DIR}/plugins/imageformats/qjpeg.dll
+File ${QT_DIR}/plugins/imageformats/qtiff.dll
 
-SetOutPath $INSTDIR\plugins\tiled
-File /r ${BUILD_DIR}\plugins\tiled\*.dll
+SetOutPath $INSTDIR/plugins/tiled
+File /r ${BUILD_DIR}/plugins/tiled/*.dll
 
-SetOutPath $INSTDIR\translations
-File  ${BUILD_DIR}\translations\*.qm
-File  ${QT_DIR}\translations\qt_cs.qm
-File  ${QT_DIR}\translations\qt_de.qm
-File  ${QT_DIR}\translations\qt_es.qm
-File  ${QT_DIR}\translations\qt_fr.qm
-File  ${QT_DIR}\translations\qt_he.qm
-File  ${QT_DIR}\translations\qt_ja.qm
-File  ${QT_DIR}\translations\qt_pt.qm
-File  ${QT_DIR}\translations\qt_ru.qm
-File  ${QT_DIR}\translations\qt_zh_CN.qm
-File  ${QT_DIR}\translations\qt_zh_TW.qm
+SetOutPath $INSTDIR/translations
+File  ${BUILD_DIR}/translations/*.qm
+File  ${QT_DIR}/translations/qt_cs.qm
+File  ${QT_DIR}/translations/qt_de.qm
+File  ${QT_DIR}/translations/qt_es.qm
+File  ${QT_DIR}/translations/qt_fr.qm
+File  ${QT_DIR}/translations/qt_he.qm
+File  ${QT_DIR}/translations/qt_ja.qm
+File  ${QT_DIR}/translations/qt_pt.qm
+File  ${QT_DIR}/translations/qt_ru.qm
+File  ${QT_DIR}/translations/qt_zh_CN.qm
+File  ${QT_DIR}/translations/qt_zh_TW.qm
 
-SetOutPath $INSTDIR\examples
-File /r ${ROOT_DIR}\examples\*.*
+SetOutPath $INSTDIR/examples
+File /r ${ROOT_DIR}/examples/*.*
 
-SetOutPath $INSTDIR\docs
-File /r ${ROOT_DIR}\docs\map.*
+SetOutPath $INSTDIR/docs
+File /r ${ROOT_DIR}/docs/map.*
 
-SetOutPath $INSTDIR\util
-File /r /x .gitignore /x README /x README.txt ${ROOT_DIR}\util\*.*
+SetOutPath $INSTDIR/util
+File /r /x .gitignore /x README /x README.txt ${ROOT_DIR}/util/*.*
 
 ; Shortcuts 
-CreateDirectory "$SMPROGRAMS\${P}"
-CreateShortCut  "$SMPROGRAMS\${P}\${P}.lnk" "$INSTDIR\${P_NORM}.exe"
-CreateShortCut  "$SMPROGRAMS\${P}\uninstall.lnk" "$INSTDIR\uninstall.exe"
+CreateDirectory "$SMPROGRAMS/${P}"
+CreateShortCut  "$SMPROGRAMS/${P}/${P}.lnk" "$INSTDIR/${P_NORM}.exe"
+CreateShortCut  "$SMPROGRAMS/${P}/uninstall.lnk" "$INSTDIR/uninstall.exe"
 
 ; File associations
-${RegisterExtension} "$INSTDIR\${P_NORM}" ".tmx" "Tiled.tmx"
+${RegisterExtension} "$INSTDIR/${P_NORM}" ".tmx" "Tiled.tmx"
 
 ; Add version number to Registry
 WriteRegStr HKLM "Software\${PRODUCT_REG_KEY}" "Version" "${V}"
 
 ; Add uninstall information to "Add/Remove Programs"
 WriteRegStr HKLM ${ADD_REMOVE} "DisplayName" "Tiled - Tiled Map Editor"
-WriteRegStr HKLM ${ADD_REMOVE} "DisplayIcon" "$INSTDIR\${P_NORM}-icon.ico"
-WriteRegStr HKLM ${ADD_REMOVE} "UninstallString" "$\"$INSTDIR\uninstall.exe$\""
-WriteRegStr HKLM ${ADD_REMOVE} "QuietUninstallString" "$\"$INSTDIR\uninstall.exe$\" /S"
+WriteRegStr HKLM ${ADD_REMOVE} "DisplayIcon" "$INSTDIR/${P_NORM}-icon.ico"
+WriteRegStr HKLM ${ADD_REMOVE} "UninstallString" "$/"$INSTDIR/uninstall.exe$/""
+WriteRegStr HKLM ${ADD_REMOVE} "QuietUninstallString" "$/"$INSTDIR/uninstall.exe$/" /S"
 WriteRegStr HKLM ${ADD_REMOVE} "Version" "${V}"
 SectionEnd
 ;------------ Uninstaller -------------
 Section "uninstall"
-Delete $INSTDIR\COPYING.txt
-Delete $INSTDIR\AUTHORS.txt
-Delete $INSTDIR\README.txt
-Delete $INSTDIR\NEWS.txt
-Delete $INSTDIR\LICENSE.APACHE.txt
-Delete $INSTDIR\LICENSE.BSD.txt
-Delete $INSTDIR\LICENSE.GPL.txt
-Delete $INSTDIR\tiled.dll
-Delete $INSTDIR\tiled.exe
-Delete $INSTDIR\tmxviewer.exe
-Delete $INSTDIR\tmxrasterizer.exe
-Delete $INSTDIR\automappingconverter.exe
-Delete $INSTDIR\Qt5Core.dll
-Delete $INSTDIR\Qt5Gui.dll
-Delete $INSTDIR\Qt5Widgets.dll
-Delete $INSTDIR\Qt5OpenGL.dll
-Delete $INSTDIR\libEGL.dll
-Delete $INSTDIR\libGLESv2.dll
-Delete $INSTDIR\icuin51.dll
-Delete $INSTDIR\icuuc51.dll
-Delete $INSTDIR\icudt51.dll
-Delete $INSTDIR\MSVCP100.DLL
-Delete $INSTDIR\MSVCR100.DLL
-Delete $INSTDIR\tiled-icon.ico
-Delete $INSTDIR\qt.conf
-Delete $INSTDIR\uninstall.exe
+Delete $INSTDIR/COPYING.txt
+Delete $INSTDIR/AUTHORS.txt
+Delete $INSTDIR/README.txt
+Delete $INSTDIR/NEWS.txt
+Delete $INSTDIR/LICENSE.APACHE.txt
+Delete $INSTDIR/LICENSE.BSD.txt
+Delete $INSTDIR/LICENSE.GPL.txt
+Delete $INSTDIR/tiled.dll
+Delete $INSTDIR/tiled.exe
+Delete $INSTDIR/tmxviewer.exe
+Delete $INSTDIR/tmxrasterizer.exe
+Delete $INSTDIR/automappingconverter.exe
+Delete $INSTDIR/Qt5Core.dll
+Delete $INSTDIR/Qt5Gui.dll
+Delete $INSTDIR/Qt5Widgets.dll
+Delete $INSTDIR/Qt5OpenGL.dll
+Delete $INSTDIR/libEGL.dll
+Delete $INSTDIR/libGLESv2.dll
+Delete $INSTDIR/icuin51.dll
+Delete $INSTDIR/icuuc51.dll
+Delete $INSTDIR/icudt51.dll
+Delete $INSTDIR/MSVCP100.DLL
+Delete $INSTDIR/MSVCR100.DLL
+Delete $INSTDIR/tiled-icon.ico
+Delete $INSTDIR/qt.conf
+Delete $INSTDIR/uninstall.exe
 
-RMDir /r $INSTDIR\plugins\platforms
-RMDir /r $INSTDIR\plugins\imageformats
-RMDir /r $INSTDIR\plugins\tiled
-RMDir    $INSTDIR\plugins
-RMDir /r $INSTDIR\translations
-RMDir /r $INSTDIR\examples
-RMDir /r $INSTDIR\docs
-RMDir /r $INSTDIR\util
+RMDir /r $INSTDIR/plugins/platforms
+RMDir /r $INSTDIR/plugins/imageformats
+RMDir /r $INSTDIR/plugins/tiled
+RMDir    $INSTDIR/plugins
+RMDir /r $INSTDIR/translations
+RMDir /r $INSTDIR/examples
+RMDir /r $INSTDIR/docs
+RMDir /r $INSTDIR/util
 
 RMDir  $INSTDIR
 
 ; Removing shortcuts
-Delete "$SMPROGRAMS\${P}\${P}.lnk"
-Delete "$SMPROGRAMS\${P}\uninstall.lnk"
-RMDir  "$SMPROGRAMS\${P}"
+Delete "$SMPROGRAMS/${P}/${P}.lnk"
+Delete "$SMPROGRAMS/${P}/uninstall.lnk"
+RMDir  "$SMPROGRAMS/${P}"
 
 ; Removing file associations
 ${UnRegisterExtension} ".tmx" "Tiled.tmx"
