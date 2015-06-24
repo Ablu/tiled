@@ -4,3 +4,4 @@ script:
     - dnf update -y
     - qmake-qt5 -r
     - make
+    - echo "test"
