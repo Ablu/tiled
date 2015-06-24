@@ -1,7 +1,11 @@
-image: ablu/fedora-git
-script:
-    - dnf install -y /usr/bin/qmake-qt5 /usr/bin/make /usr/bin/g++ zlib-devel /usr/lib64/qt5/bin/lrelease
-    - dnf update -y
-    - qmake-qt5 -r
-    - make
-    - echo "test"
+build:
+    image: ablu/fedora-git
+    script:
+        - dnf install -y /usr/bin/qmake-qt$$qt_version /usr/bin/make /usr/bin/g++ zlib-devel /usr/lib64/qt$$qt_version/bin/lrelease
+        - dnf update -y
+        - qmake-qt$$qt_version -r
+        - make
+matrix:
+    qt_version:
+        - 4
+        - 5
