@@ -1,6 +1,5 @@
-image: fedora
+image: ablu/fedora-git
 script:
-    - sudo dnf install -y git
     - sudo dnf install -y /usr/bin/qmake-qt5
     - sudo dnf update
     - qmake-qt5 -r
