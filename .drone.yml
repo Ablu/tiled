@@ -1,6 +1,7 @@
 build:
     image: ablu/fedora-git
     script:
+        - echo "test"
         - dnf install -y /usr/bin/qmake-qt$$qt_version /usr/bin/make /usr/bin/g++ zlib-devel /usr/lib64/qt$$qt_version/bin/lrelease
         - dnf update -y
         - qmake-qt$$qt_version -r
