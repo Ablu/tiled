@@ -5,6 +5,7 @@ build:
         - dnf update -y
         - qmake-qt$$qt_version -r
         - make
+
 matrix:
     qt_version:
         - 4
