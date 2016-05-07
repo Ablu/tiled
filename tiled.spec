@@ -94,7 +94,7 @@ rm -rf src/zlib
   LIBDIR=%{_libdir} \
   RPATH=no \
   USE_FHS_PLUGIN_PATH=yes \
-  "QMAKE_CXXFLAGS+=-DTILED_VERSION=Snapshot %{release}"
+  "QMAKE_CXXFLAGS+=-DTILED_VERSION=snapshot_%{release}"
 make %{?_smp_mflags}
 
 %install
