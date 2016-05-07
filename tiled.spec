@@ -94,7 +94,7 @@ rm -rf src/zlib
   LIBDIR=%{_libdir} \
   RPATH=no \
   USE_FHS_PLUGIN_PATH=yes \
-  TILED_VERSION=`date +%Y.%m.%d`_${release}
+  TILED_VERSION=`date +%Y.%m.%d`
 make %{?_smp_mflags}
 
 %install
