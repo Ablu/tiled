@@ -1,5 +1,5 @@
 Name:           tiled
-Version:        0.15.2
+Version:        0.16.0
 Release:        1%{?dist}
 Summary:        Tiled Map Editor
 # tiled itself is GPLv2+, libtiled and tmxviewer are BSD
@@ -178,6 +178,9 @@ fi
 %{_libdir}/%{name}/plugins/libtengine.so
 
 %changelog
+* Tue Apr 19 2016 Erik Schilling <ablu.erikschilling@googlemail.com> - 0.16.0-1
+- New upstream release 0.16.0
+
 * Sun Mar 06 2016 Erik Schilling <ablu.erikschilling@googlemail.com> - 0.15.2-1
 - New bugfix release 0.15.2
 
