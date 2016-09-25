@@ -32,5 +32,6 @@
   <screenshot width="800" height="600">http://www.mapeditor.org/img/appdata/screenshot_terrain.png</screenshot>
  </screenshots>
  <url type="homepage">http://www.mapeditor.org/</url>
+ <url type="donation">https://www.patreon.com/bjorn</url>
  <updatecontact>ablu@fedoraproject.org</updatecontact>
 </application>
